@@ -31,7 +31,7 @@ ollama pull llama3
 ```
 
 # Usage
-The program will acompany us with this text in terminal
+The main file `location_extracion.py` will acompany us with this text in terminal
 
 ```
 usage: location_extraction.py [-h] [-m MAX_URLS] csv_file
@@ -55,3 +55,11 @@ Both folder having a `py` file for conversion and extracting randomly 100 urls f
 In summary the program it is parsing trought the `db` excepting errors `detects` the website langauge for further translation of necessary keywords which they are stored into `translated_words` variable since the websites crawled can be in any language. Afterwards we are retriving only the important urls crawled with the help of the keywords for better efficency which are then given to `olamma` running `llama3 model` where afterwards the result are stored into the variable `assistant_response` where further filtering si done and also for the desired format of the output is checked and adjusted with the help of `geolocator` from the `location variable` where is after stored the final output in the `output_locations.txt`. From this output if the response has `OK` into it that means that the final address is a correct one otherwise it is specified with `Location not found!`
 
 # Testing
+For a random selection of 100 urls these are the results given:
+
+<img width="606" alt="Screenshot 2024-05-13 at 04 25 35" src="https://github.com/Albu2103/Location-Extraction-From-URLs/assets/167569646/ef68fed4-d034-4dc5-baeb-21aa862a26cf">
+
+The output can be seen in the `output_locations.txt` file 
+
+# Challenges
+There is no `NLP` library specialized for location identifying since there is a vast option of postal addresses. The most relaible one being `LocationTagger` which extracts only `Country`, `Region` and `City` where for this case the entire physical address it is needed with high accuracy. Local llm used for this project can bemisleading at times thus further filtering of information and adding additional libaries like `geolocator` it is necessary. Substitute to `geolocator`, `geopy` does not work accordingly to the task since most of the addresses do not work for enhancing them, using `latitude` and `longitude` did help but gives for the approximate location address.
