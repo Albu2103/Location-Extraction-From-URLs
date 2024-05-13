@@ -1,0 +1,9 @@
+beautifulsoup4==4.12.3
+langdetect==1.0.9
+ollama==0.2.0
+pandas==2.2.2
+Requests==2.31.0
+requests_html==0.10.0
+translate==3.6.1
+lxml_html_clean==0.1.1
+geocoder==1.38.1
