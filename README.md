@@ -53,3 +53,5 @@ Both folder having a `py` file for conversion and extracting randomly 100 urls f
 
 # How it works 
 In summary the program it is parsing trought the `db` excepting errors `detects` the website langauge for further translation of necessary keywords which they are stored into `translated_words` variable since the websites crawled can be in any language. Afterwards we are retriving only the important urls crawled with the help of the keywords for better efficency which are then given to `olamma` running `llama3 model` where afterwards the result are stored into the variable `assistant_response` where further filtering si done and also for the desired format of the output is checked and adjusted with the help of `geolocator` from the `location variable` where is after stored the final output in the `output_locations.txt`. From this output if the response has `OK` into it that means that the final address is a correct one otherwise it is specified with `Location not found!`
+
+# Testing
